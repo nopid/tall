@@ -63,7 +63,7 @@ class AFD:
                 return None
             if x not in self.alpha:
                 raise LettreNonValide
-            cur = self.delta.get((q, x), None)
+            cur = self.delta.get((cur, x), None)
         return cur
 
     def accepte(self, u):
