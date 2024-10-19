@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "tall"
+name = "tpall"
 version = "0.1"
 authors = [
   { name = "Nicolas Ollinger", email = "nopid@free.fr" },
@@ -22,5 +22,5 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/nopid/tall"
-Issues = "https://github.com/nopid/tall/issues"
+Homepage = "https://github.com/nopid/tpall"
+Issues = "https://github.com/nopid/tpall/issues"
