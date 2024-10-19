@@ -168,7 +168,7 @@ class AFN:
             cur = set([X])
         for x in u:
             if not cur:
-                return None
+                return set()
             if x not in self.alpha:
                 raise LettreNonValide
             nxt = set()

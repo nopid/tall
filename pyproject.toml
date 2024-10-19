@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "tpall"
-version = "0.2"
+version = "0.3"
 authors = [
   { name = "Nicolas Ollinger", email = "nopid@free.fr" },
 ]
