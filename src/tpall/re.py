@@ -39,7 +39,7 @@ class Lettre(Expression):
     def __str__(self):
         return f"{self.symbole}"
 
-    def tree(self):
+    def arbre(self):
         return f"{self.symbole}"
 
 
@@ -56,7 +56,7 @@ class Epsilon(Expression):
     def __str__(self):
         return f"1"
 
-    def tree(self):
+    def arbre(self):
         return f"1"
 
 
@@ -73,7 +73,7 @@ class EnsembleVide(Expression):
     def __str__(self):
         return f"0"
 
-    def tree(self):
+    def arbre(self):
         return f"0"
 
 
@@ -96,8 +96,8 @@ class Somme(Expression):
             f"{parenthese(self.gauche, self.prio)}+{parenthese(self.droite, self.prio)}"
         )
 
-    def tree(self):
-        return ("+", self.gauche.tree(), self.droite.tree())
+    def arbre(self):
+        return ("+", self.gauche.arbre(), self.droite.arbre())
 
 
 class Concat(Expression):
@@ -119,8 +119,8 @@ class Concat(Expression):
             f"{parenthese(self.gauche, self.prio)}{parenthese(self.droite, self.prio)}"
         )
 
-    def tree(self):
-        return ("·", self.gauche.tree(), self.droite.tree())
+    def arbre(self):
+        return ("·", self.gauche.arbre(), self.droite.arbre())
 
 
 class Etoile(Expression):
@@ -139,8 +139,8 @@ class Etoile(Expression):
     def __str__(self):
         return f"{parenthese(self.expr, self.prio)}*"
 
-    def tree(self):
-        return ("*", self.expr.tree())
+    def arbre(self):
+        return ("*", self.expr.arbre())
 
 
 class ErreurDeSyntaxe(Exception):
@@ -268,7 +268,7 @@ def arbre(e):
     """Affiche l'arbre syntaxique de l'expression [e] grâce au module [svgling]"""
     import svgling
 
-    return svgling.draw_tree(e.tree())
+    return svgling.draw_tree(e.arbre())
 
 
 def table_des_positions(e):
